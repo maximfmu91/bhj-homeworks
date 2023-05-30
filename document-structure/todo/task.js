@@ -29,7 +29,8 @@ function createTask (text) {
 }
 
 
-taskForm.addEventListener('submit', function () {
+taskForm.addEventListener('submit', function (e) {
+    e.preventDefault();
     if (input.value.length > 0) {
        let message = input.value;
        createTask(message); 
