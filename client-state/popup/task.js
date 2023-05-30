@@ -20,7 +20,8 @@ if (!getCookie("modalClosed")) {
   modal.classList.add('modal_active');
 }
 
-modalClose.addEventListener('click', function() {
+modalClose.addEventListener('click', function(e) {
+  e.preventDefault();
   modal.classList.remove('modal_active');
   setCookie('modalClosed', true);
 });
