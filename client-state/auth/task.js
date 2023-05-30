@@ -22,8 +22,8 @@ form.addEventListener('submit', function(e) {
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://students.netoservices.ru/nestjs-backend/auth');    
     xhr.responseType = 'json';
-    xhr.addEventListener('readystatechange', function(){
-        if(xhr.readyState === xhr.DONE && xhr.status >= 200 && xhr.status < 300){
+    xhr.addEventListener('load', function(){
+        if(xhr.status >= 200 && xhr.status < 300){
         let response = xhr.response; 
         if (response.success) {
             let userId = response.user_id;
